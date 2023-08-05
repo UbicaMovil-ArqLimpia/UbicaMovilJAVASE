@@ -1,17 +1,21 @@
-<%-- 
-    Document   : error
-    Created on : 27 jul. 2023, 17:54:57
-    Author     : Gisela
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+    <head>        
+        <jsp:include page="/Views/Shared/title.jsp" />
+        <title>Error de la aplicación</title>
+
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <jsp:include page="/Views/Shared/headerBody.jsp" />  
+        <main class="container"> 
+            <div class="row">
+                <div class="col l12 s12">
+                    <h4>Succedio el siguiente error en la aplicación</h4> 
+                    <span style="color: red"><%= request.getAttribute("error") %></span> 
+                </div>
+            </div>            
+        </main>
+        <jsp:include page="/Views/Shared/footerBody.jsp" />      
     </body>
 </html>
