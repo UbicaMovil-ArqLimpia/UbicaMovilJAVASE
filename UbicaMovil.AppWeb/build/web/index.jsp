@@ -1,17 +1,24 @@
-<%-- 
-    Document   : index
-    Created on : 27 jul. 2023, 17:50:52
-    Author     : Gisela
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="ubicamovil.appweb.utils.*"%>
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+    
+    <head>        
+        <jsp:include page="/Views/Shared/title.jsp" />
+        <title>Home</title>
     </head>
+    
     <body>
-        <h1>Hello World!</h1>
+        <jsp:include page="/Views/Shared/headerBody.jsp" />  
+        <main class="container"> 
+            <div class="row">
+                <div class="col l12 s12">
+                    <h1>Bienvenidos</h1> 
+                    <span>Al sistema para aprender a como colocarle seguridad a sus aplicaciones web</span> 
+                </div>
+            </div>            
+        </main>
+        <jsp:include page="/Views/Shared/footerBody.jsp" />      
     </body>
+    
 </html>

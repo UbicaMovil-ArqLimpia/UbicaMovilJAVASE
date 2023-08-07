@@ -1,17 +1,14 @@
-x   <%-- 
-    Document   : select
-    Created on : 27 jul. 2023, 17:56:35
-    Author     : Gisela
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
-        <h1>Hello World!</h1>
-    </body>
-</html>
+<%@page import="ubicamovil.entidadesdenegocio.Categoria"%>
+<%@page import="ubicamovil.accesoadatos.CategoriaDAL"%>
+<%@page import="java.util.ArrayList"%>
+<% ArrayList<Categoria> categorias = CategoriaDAL.getAll();
+    int id = Integer.parseInt(request.getParameter("id"));
+%>
+<select id="slCategoria" name="idCategoria">
+    <option <%=(id == 0) ? "selected" : ""%>  value="0">SELECCIONAR</option>
+    <% for (Categoria categoria : categorias) {%>
+    <option <%=(id == categoria.getId()) ? "selected" : ""%>  value="<%=categoria.getId()%>"><%= categoria.getNombre()%></option>
+    <%}%>
+</select>
+<label for="idCategoria">Categoria</label>
