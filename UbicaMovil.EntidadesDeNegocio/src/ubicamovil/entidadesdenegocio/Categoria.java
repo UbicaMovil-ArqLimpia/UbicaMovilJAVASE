@@ -8,6 +8,7 @@ public class Categoria {
     private int top_aux;
     
     private ArrayList<Empresa> empresa;
+    private ArrayList<Anuncio> anuncio;
 
     public Categoria() {
     }
@@ -47,5 +48,13 @@ public class Categoria {
 
     public void setEmpresa(ArrayList<Empresa> empresa) {
         this.empresa = empresa;
+    }
+
+    public ArrayList<Anuncio> getAnuncio() {
+        return anuncio;
+    }
+
+    public void setAnuncio(ArrayList<Anuncio> anuncio) {
+        this.anuncio = anuncio;
     }
 }
