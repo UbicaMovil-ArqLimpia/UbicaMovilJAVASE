@@ -13,7 +13,7 @@
             <h5>Detalle de categoria</h5>
             <div class="row">
                 <div class="input-field col l4 s12">
-                    <input disabled  id="txtNombre" type="text" value="<%=categoria.getNombre()%>">
+                    <input disabled  id="txtNombre" type="text" value="<%=categoria.getNombre()%>" disabled="disabled">
                     <label for="txtNombre">Nombre</label>
                 </div>                                         
             </div>

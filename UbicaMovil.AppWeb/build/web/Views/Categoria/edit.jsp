@@ -6,7 +6,6 @@
     <head>        
         <jsp:include page="/Views/Shared/title.jsp" />
         <title>Editar categoria</title>
-
     </head>
     <body>
         <jsp:include page="/Views/Shared/headerBody.jsp" />  

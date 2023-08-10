@@ -53,13 +53,13 @@ public class CategoriaServlet extends HttpServlet {
         try {
             Categoria categoria = new Categoria(); // Crear una instancia de la entidad de Categoria.
             categoria.setTop_aux(10); // Agregar el Top_aux con el valor de 10 a la propiedad Top_aux de categoria.
-            ArrayList<Categoria> roles = CategoriaDAL.Search(categoria); // Ir a la capa de acceso a datos y buscar los registros de Categoria.
+            ArrayList<Categoria> categorias = CategoriaDAL.Search(categoria); // Ir a la capa de acceso a datos y buscar los registros de Categoria.
             // El request.setAttribute se utiliza para enviar datos desde un servlet a un jsp.
-            request.setAttribute("roles", roles); // Enviar los roles al jsp utilizando el request.setAttribute con el nombre del atributo categorias.
+            request.setAttribute("categorias", categorias); // Enviar los roles al jsp utilizando el request.setAttribute con el nombre del atributo categorias.
             // Enviar el Top_aux de Categoria al jsp utilizando el request.setAttribute con el nombre del atributo top_aux.
             request.setAttribute("top_aux", categoria.getTop_aux());
             // El request.getRequestDispatcher nos permite direccionar a un jsp desde un servlet.              
-            request.getRequestDispatcher("Views/Rol/index.jsp").forward(request, response); // Direccionar al jsp index de Categoria.
+            request.getRequestDispatcher("Views/Categoria/index.jsp").forward(request, response); // Direccionar al jsp index de Categoria.
         } catch (Exception ex) {
             Utilidad.enviarError(ex.getMessage(), request, response); // Enviar al jsp de error si hay un Exception.
         }

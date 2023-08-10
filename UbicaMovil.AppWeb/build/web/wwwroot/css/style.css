@@ -1,0 +1,16 @@
+/* Estilos CSS para el mapa */
+#mapa {
+    height: 400px;
+    width: 100%;
+}
+
+
+h2 {
+    color: black;
+    font-size: 12px;
+}
+
+h4 {
+    color: black;
+    font-size: 12px;
+}

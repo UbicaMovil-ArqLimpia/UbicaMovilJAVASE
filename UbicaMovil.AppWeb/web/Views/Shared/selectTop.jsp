@@ -6,6 +6,7 @@
     }
 %>
 <select id="sltop_aux" name="top_aux">
+    <option <%=(top_aux == 5) ? "selected" : ""%>  value="5">5</option>
     <option <%=(top_aux == 10) ? "selected" : ""%>  value="10">10</option>
     <option <%=(top_aux == 20) ? "selected" : ""%>  value="20">20</option>
     <option <%=(top_aux == 50) ? "selected" : ""%>  value="50">50</option>

@@ -5,7 +5,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <jsp:include page="/Views/Shared/title.jsp" />
-        <title>JSP Page</title>
+        <title>UbicaMovil</title>
     </head>
     <body>
         <jsp:include page="/Views/Shared/headerBody.jsp" />  

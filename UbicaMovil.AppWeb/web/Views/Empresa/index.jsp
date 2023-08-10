@@ -59,9 +59,8 @@
                                     <th>Nombre</th>
                                     <th>Categoria</th>  
                                     <th>Direccion</th> 
-                                    <th>Telefono</th>  
-                                    <th>Hora de apertura</th>
-                                    <th>Hora de cierre</th>
+                                    <th>Telefono</th>
+                                    <th>Acciones</th>
                                 </tr>
                             </thead>                       
                             <tbody>                           
@@ -78,8 +77,6 @@
                                     <td><%=empresa.getCategoria().getNombre()%></td>
                                     <td><%=empresa.getDireccion()%></td>                                 
                                     <td><%=empresa.getTelefono()%></td>
-                                    <td><%=empresa.getHorarioEntrada()%></td>
-                                    <td><%=empresa.getHorarioSalida()%></td>
                                     <td>
                                         <div style="display:flex">
                                              <a href="Empresa?accion=edit&id=<%=empresa.getId()%>" title="Modificar" class="waves-effect waves-light btn green">

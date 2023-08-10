@@ -95,7 +95,7 @@ public class EmpresaServlet extends HttpServlet {
             request.setAttribute("empresas", empresas);
             // Enviar el Top_aux de Empresa al jsp utilizando el request.setAttribute con el nombre del atributo top_aux.
             request.setAttribute("top_aux", empresa.getTop_aux());
-            request.getRequestDispatcher("Views/Usuario/index.jsp").forward(request, response); // Direccionar al jsp index de Empresa.
+            request.getRequestDispatcher("Views/Empresa/index.jsp").forward(request, response); // Direccionar al jsp index de Empresa.
         } catch (Exception ex) {
             Utilidad.enviarError(ex.getMessage(), request, response); // Enviar al jsp de error si hay un Exception.
         }
@@ -169,7 +169,7 @@ public class EmpresaServlet extends HttpServlet {
                 request.setAttribute("empresa", empresa_result);
             } else {
                 // Enviar al jsp de error el siguiente mensaje. El Id: ? no existe en la tabla de Empresa
-                Utilidad.enviarError("El Id:" + empresa_result.getId() + " no existe en la tabla de Empresa", request, response);
+                Utilidad.enviarError("El Id: " + empresa_result.getId() + " no existe en la tabla de Empresa", request, response);
             }
         } catch (Exception ex) {
             // enviar al jsp de error si hay un Exception
