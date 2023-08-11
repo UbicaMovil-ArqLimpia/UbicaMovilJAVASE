@@ -79,8 +79,8 @@ public class CategoriaServlet extends HttpServlet {
     private void doPostRequestIndex(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
             Categoria categoria = obtenerCategoria(request); // Llenar la instancia de Categoria con los parámetros enviados en el request 
-            ArrayList<Categoria> roles = CategoriaDAL.Search(categoria); // Buscar los categorias que cumple con los datos enviados en el request
-            request.setAttribute("roles", roles); // Enviar los roles al jsp utilizando el request.setAttribute con el nombre del atributo roles
+            ArrayList<Categoria> categorias = CategoriaDAL.Search(categoria); // Buscar los categorias que cumple con los datos enviados en el request
+            request.setAttribute("categorias", categorias); // Enviar los roles al jsp utilizando el request.setAttribute con el nombre del atributo roles
             // Enviar el Top_aux de Categoria al jsp utilizando el request.setAttribute con el nombre del atributo top_aux
             request.setAttribute("top_aux", categoria.getTop_aux());
             request.getRequestDispatcher("Views/Categoria/index.jsp").forward(request, response); // Direccionar al jsp index de Categoria
@@ -145,7 +145,7 @@ public class CategoriaServlet extends HttpServlet {
      * @throws javax.servlet.ServletException
      * @throws java.io.IOException
      */
-    private void requestObtenerPorId(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    private void requestGetById(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
             Categoria categoria = obtenerCategoria(request); // Llenar la instancia de Categoria con los parámetros enviados en el request.
             // Obtener desde la capa de acceso a datos el rol por Id.
@@ -175,7 +175,7 @@ public class CategoriaServlet extends HttpServlet {
      */
     private void doGetRequestEdit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // Enviar el Categoria al jsp de edit que se obtiene por Id
-        requestObtenerPorId(request, response);
+        requestGetById(request, response);
         // Direccionar al jsp edit de Categoria
         request.getRequestDispatcher("Views/Categoria/edit.jsp").forward(request, response);
     }
@@ -221,7 +221,7 @@ public class CategoriaServlet extends HttpServlet {
      */
     private void doGetRequestDetails(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // Enviar el categoria al jsp de details que se obtiene por Id.
-        requestObtenerPorId(request, response);
+        requestGetById(request, response);
         // Direccionar al jsp details de Categoria.
         request.getRequestDispatcher("Views/Categoria/details.jsp").forward(request, response);
     }
@@ -238,7 +238,7 @@ public class CategoriaServlet extends HttpServlet {
      */
     private void doGetRequestDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // Enviar el categoria al jsp de delete que se obtiene por Id.
-        requestObtenerPorId(request, response);
+        requestGetById(request, response);
         // Direccionar al jsp delete de Categoria.
         request.getRequestDispatcher("Views/Categoria/delete.jsp").forward(request, response);
     }

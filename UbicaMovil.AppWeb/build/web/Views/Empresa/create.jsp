@@ -5,9 +5,8 @@
     <head>        
         <jsp:include page="/Views/Shared/title.jsp" />
         <title>Crear empresa</title>
-        <link href="<%= request.getContextPath() %>/wwwroot/css/style.css" rel="stylesheet">
     </head>
-    <body>
+    <body onload="initialize()">
         <jsp:include page="/Views/Shared/headerBody.jsp" />  
         <main class="container">   
             <h5>Crear empresa</h5>
@@ -41,17 +40,15 @@
                         <label for="txtHorarioSalida">Hora de cierre</label>
                     </div>
                     <div class="input-field col l3 s12">
-                        <input  id="latitud" type="text" name="latitud" required class="validate" disabled="disabled">
+                        <input  id="latitud" type="text" name="latitud" required class="validate">
                         <label for="txtLatitud">Latitud</label>
                     </div> 
                     <div class="input-field col l3 s12">
-                        <input  type="text" name="longitud" id="longitud" required class="validate" disabled="disabled">
+                        <input  id="longitud" type="text" name="longitud" required class="validate">
                         <label for="txtLongitud">Longitud</label>
                     </div>
                 </div>
-                
-                <div id="mapa"></div>
-
+                        <div id="map" style="width: 100%; height: 480px;"></div>
                 <div class="row">
                     <div class="col l12 s12">
                         <button type="sutmit" class="waves-effect waves-light btn blue"><i class="material-icons right">save</i>Guardar</button>
@@ -76,6 +73,6 @@
             }
         </script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCum27trvMaz6TpLQlZzF7521lkn-4EPt0&libraries=places&callback=inicializarMapa" async defer></script>
-        <script src="<%= request.getContextPath() %>/wwwroot/js/style.js"></script>
+        <script src="<%= request.getContextPath() %>/wwwroot/js/emp1.js"></script>
     </body>
 </html>

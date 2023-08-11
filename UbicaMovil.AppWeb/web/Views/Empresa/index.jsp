@@ -13,7 +13,7 @@
         numPage = (int) Math.ceil(divNumPage);
     }
     String strTop_aux = request.getParameter("top_aux");
-    int top_aux = 10;
+    int top_aux = 5;
     if (strTop_aux != null && strTop_aux.trim().length() > 0) {
         top_aux = Integer.parseInt(strTop_aux);
     }
@@ -23,7 +23,6 @@
     <head>        
         <jsp:include page="/Views/Shared/title.jsp" />
         <title>Buscar empresa</title>
-
     </head>
     <body>
         <jsp:include page="/Views/Shared/headerBody.jsp" />  
@@ -32,7 +31,7 @@
             <form action="Empresa" method="post">
                 <input type="hidden" name="accion" value="<%=request.getAttribute("accion")%>"> 
                 <div class="row">
-                    <div class="input-field col l4 s12">
+                    <div class="input-field col l8 s12">
                         <input  id="txtNombre" type="text" name="nombre">
                         <label for="txtNombre">Nombre</label>
                     </div>
@@ -44,8 +43,8 @@
                 </div>
                 <div class="row">
                     <div class="col l12 s12">
-                        <button type="sutmit" class="waves-effect waves-light btn blue"><i class="material-icons right">search</i>Buscar</button>
-                        <a href="Empresa?accion=create" class="waves-effect waves-light btn blue"><i class="material-icons right">add</i>Crear</a>                          
+                        <button type="sutmit" class="waves-effect waves-light btn purple"><i class="material-icons right">search</i>Buscar</button>
+                        <a href="Empresa?accion=create" class="waves-effect waves-light btn green"><i class="material-icons right">add</i>Crear</a>                          
                     </div>
                 </div>
             </form>
@@ -53,13 +52,12 @@
             <div class="row">
                 <div class="col l12 s12">
                     <div style="overflow: auto">
-                        <table class="paginationjs">
+                        <table class="paginationjs centered responsive-table striped purple lighten-4">
                             <thead>
                                 <tr>                                     
                                     <th>Nombre</th>
                                     <th>Categoria</th>  
-                                    <th>Direccion</th> 
-                                    <th>Telefono</th>
+                                    <th>Direccion</th>
                                     <th>Acciones</th>
                                 </tr>
                             </thead>                       
@@ -75,11 +73,10 @@
                                 <tr data-page="<%= tempNumPage%>">                                    
                                     <td><%=empresa.getNombre()%></td>
                                     <td><%=empresa.getCategoria().getNombre()%></td>
-                                    <td><%=empresa.getDireccion()%></td>                                 
-                                    <td><%=empresa.getTelefono()%></td>
+                                    <td><%=empresa.getDireccion()%></td>
                                     <td>
                                         <div style="display:flex">
-                                             <a href="Empresa?accion=edit&id=<%=empresa.getId()%>" title="Modificar" class="waves-effect waves-light btn green">
+                                             <a href="Empresa?accion=edit&id=<%=empresa.getId()%>" title="Modificar" class=" waves-effect waves-light btn green">
                                             <i class="material-icons">edit</i>
                                         </a>
                                         <a href="Empresa?accion=details&id=<%=empresa.getId()%>" title="Ver" class="waves-effect waves-light btn blue">

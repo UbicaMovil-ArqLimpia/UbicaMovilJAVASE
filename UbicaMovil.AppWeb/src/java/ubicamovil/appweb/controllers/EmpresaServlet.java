@@ -21,6 +21,10 @@ public class EmpresaServlet extends HttpServlet {
         // Obtener el parámetro accion del request
         String accion = Utilidad.getParameter(request, "accion", "index");
         Empresa empresa = new Empresa();
+        if (accion.equals("create") == false) { // Si la accion no es create.
+            // Obtener el parámetro id del request  y asignar ese valor a la propiedad Id de Categoria.
+            empresa.setId(Integer.parseInt(Utilidad.getParameter(request, "id", "0")));
+        }
         // Obtener el parámetro nombre del request y asignar ese valor a la propiedad Nombre de Empresa.
         empresa.setNombre(Utilidad.getParameter(request, "nombre", ""));
         // Obtener el parámetro direccion del request y asignar ese valor a la propiedad Direccion de Empresa.
@@ -39,7 +43,7 @@ public class EmpresaServlet extends HttpServlet {
         empresa.setIdCategoria(Integer.parseInt(Utilidad.getParameter(request, "idCategoria", "0")));
         if (accion.equals("index")) {
             // Obtener el parámetro top_aux del request  y asignar ese valor a la propiedad Top_aux de Empresa.
-            empresa.setTop_aux(Integer.parseInt(Utilidad.getParameter(request, "top_aux", "10")));
+            empresa.setTop_aux(Integer.parseInt(Utilidad.getParameter(request, "top_aux", "5")));
             empresa.setTop_aux(empresa.getTop_aux() == 0 ? Integer.MAX_VALUE : empresa.getTop_aux());
         }
         // Devolver la instancia de la entidad Empresa con los valores obtenidos del request.

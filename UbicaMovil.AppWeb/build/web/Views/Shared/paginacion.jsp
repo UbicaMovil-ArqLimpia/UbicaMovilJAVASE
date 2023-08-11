@@ -15,7 +15,7 @@
 </ul>
 <script>
     (function () {
-        var domPaginacion = document.querySelectorAll('.paginationjs');
+        var domPaginacion = document.querySelectorAll()('.paginationjs');
         if (domPaginacion.length > 0) {
             var mostrarPaginacion = function (pNumPage) {
                 $("table.paginationjs tbody tr[data-page]").hide();
@@ -23,7 +23,7 @@
                 $("ul.paginationjs").attr("data-pageactive", pNumPage);
                 $("ul.paginationjs li[data-typepage='Item']").removeClass("active");
                 $("ul.paginationjs li[data-typepage='Item'][data-page='" + pNumPage + "']").addClass("active");
-            }
+            };
             mostrarPaginacion(1);
             $("ul.paginationjs li").click(function () {
                 if ($(this).attr("data-typepage") === "Item") {

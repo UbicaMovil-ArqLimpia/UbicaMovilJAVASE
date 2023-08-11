@@ -2,6 +2,12 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group name="UbicaMovil"/>
+        <group name="UbicaMovil">
+            <file>file:/D:/JAVA/UbicaMovilJAVASE/UbicaMovilJavaEE/UbicaMovil.AppWeb/src/java/ubicamovil/appweb/controllers/EmpresaServlet.java</file>
+            <file>file:/D:/JAVA/UbicaMovilJAVASE/UbicaMovilJavaEE/UbicaMovil.AppWeb/web/wwwroot/js/style.js</file>
+            <file>file:/D:/JAVA/UbicaMovilJAVASE/UbicaMovilJavaEE/UbicaMovil.AppWeb/web/index.jsp</file>
+            <file>file:/D:/JAVA/UbicaMovilJAVASE/UbicaMovilJavaEE/UbicaMovil.AppWeb/web/Views/Empresa/index.jsp</file>
+            <file>file:/D:/JAVA/UbicaMovilJAVASE/UbicaMovilJavaEE/UbicaMovil.AppWeb/web/Views/Empresa/details.jsp</file>
+        </group>
     </open-files>
 </project-private>
