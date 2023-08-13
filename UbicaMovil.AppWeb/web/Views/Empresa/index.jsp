@@ -24,7 +24,7 @@
         <jsp:include page="/Views/Shared/title.jsp" />
         <title>Buscar empresa</title>
     </head>
-    <body>
+    <body onload="initialize()">
         <jsp:include page="/Views/Shared/headerBody.jsp" />  
         <main class="container">   
             <h5>Buscar empresa</h5>
@@ -74,6 +74,8 @@
                                     <td><%=empresa.getNombre()%></td>
                                     <td><%=empresa.getCategoria().getNombre()%></td>
                                     <td><%=empresa.getDireccion()%></td>
+                                    <td id="latitud"><%=empresa.getLatitud()%></td>
+                                    <td id="longitud"><%=empresa.getLongitud()%></td>
                                     <td>
                                         <div style="display:flex">
                                              <a href="Empresa?accion=edit&id=<%=empresa.getId()%>" title="Modificar" class=" waves-effect waves-light btn green">
@@ -94,6 +96,8 @@
                     </div>                  
                 </div>
             </div>             
+                            
+                        <div id="map" style="width: 100%; height: 480px;"></div>
             <div class="row">
                 <div class="col l12 s12">
                     <jsp:include page="/Views/Shared/paginacion.jsp">
@@ -102,6 +106,8 @@
                 </div>
             </div>
         </main>
-        <jsp:include page="/Views/Shared/footerBody.jsp" />      
+        <jsp:include page="/Views/Shared/footerBody.jsp" />
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCum27trvMaz6TpLQlZzF7521lkn-4EPt0&libraries=places&callback=inicializarMapa" async defer></script>
+        <script src="<%= request.getContextPath() %>/wwwroot/js/emp.js"></script>
     </body>
 </html>

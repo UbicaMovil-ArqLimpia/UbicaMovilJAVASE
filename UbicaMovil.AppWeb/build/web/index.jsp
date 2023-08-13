@@ -1,8 +1,4 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page import="ubicamovil.entidadesdenegocio.Empresa"%>
-<%@page import="ubicamovil.entidadesdenegocio.Categoria"%>
-<%@page import="java.util.ArrayList"%>
-<% ArrayList<Empresa> empresas = (ArrayList<Empresa>) request.getAttribute("empresas");%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -23,14 +19,7 @@
                     <h2><strong>UbicaMóvil</strong></h2> 
                 </div>
             </div>
-                    <while>
-                        
-                    </while>
-                        <input  id="latitud" type="text" value="<%=empresa.getLatitud()%>">
-                            <input  id="longitud" type="text" value="<%=empresa.getLongitud()%>">
-                    
-                        <div id="map" style="width: 100%; height: 480px;"></div>  
-        </main>
+           </main>
         <jsp:include page="/Views/Shared/footerBody.jsp" />
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCum27trvMaz6TpLQlZzF7521lkn-4EPt0&libraries=places&callback=inicializarMapa" async defer></script>
         <script src="<%= request.getContextPath() %>/wwwroot/js/style.js"></script>
