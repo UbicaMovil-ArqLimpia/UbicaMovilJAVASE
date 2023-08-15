@@ -10,7 +10,10 @@
     <body>
         <jsp:include page="/Views/Shared/headerBody.jsp" />  
         <main class="container">   
-            <h5>Crear categoria</h5>
+            <br>
+            <br>
+            <br>
+            <h2><strong>Create categoria</strong></h2>
             <form class="center-align" action="Categoria" method="post">
                 <input type="hidden" name="accion" value="<%=request.getAttribute("accion")%>">                
                 <div class="row">

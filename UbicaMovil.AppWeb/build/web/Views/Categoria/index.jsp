@@ -25,12 +25,13 @@
     </head>
     <body>
         <jsp:include page="/Views/Shared/headerBody.jsp" />  
-        <main class="container">   
+        <main class="container center">   
             <br>
             <br>
             <br>
+            <h2><strong>Categorias</strong></h2>
             <br>
-                <h4 class="center-align deep-purple-text text-darken-4"><strong>CATEGORIAS</strong></h4>
+            <h5>Buscar categoria</h5>
             <form action="Categoria" method="post">
                 <input type="hidden" name="accion" value="<%=request.getAttribute("accion")%>"> 
                 <div class="row">

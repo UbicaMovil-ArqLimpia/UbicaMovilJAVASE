@@ -10,7 +10,10 @@
     <body>
         <jsp:include page="/Views/Shared/headerBody.jsp" />  
         <main class="container">   
-            <h5>Eliminar categoria</h5>          
+            <br>
+            <br>
+            <br>
+            <h2><strong>Eliminar categoria</strong></h2>       
             <form action="Categoria" method="post">
                 <input type="hidden" name="accion" value="<%=request.getAttribute("accion")%>">   
                 <input type="hidden" name="id" value="<%=categoria.getId()%>">   

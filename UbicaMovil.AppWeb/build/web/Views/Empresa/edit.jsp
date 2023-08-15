@@ -9,8 +9,11 @@
     </head>
     <body onload="initialize()">
         <jsp:include page="/Views/Shared/headerBody.jsp" />  
-        <main class="container">   
-            <h5>Editar empresa</h5>
+        <main class="container">
+            <br>
+            <br>
+            <br>
+            <h4><strong>Editar empresa</strong></h4>
             <form action="Empresa" method="post" onsubmit="return  validarFormulario()">
                 <input type="hidden" name="accion" value="<%=request.getAttribute("accion")%>"> 
                 <input type="hidden" name="id" value="<%=empresa.getId()%>">  
@@ -57,8 +60,9 @@
                         <a href="Empresa" class="waves-effect waves-light btn blue"><i class="material-icons right">list</i>Cancelar</a>                          
                     </div>
                 </div>
-            </form>          
-        </main>
+            </form>  
+                        </main>
+        
         <jsp:include page="/Views/Shared/footerBody.jsp" />   
         <script>
             function validarFormulario() {

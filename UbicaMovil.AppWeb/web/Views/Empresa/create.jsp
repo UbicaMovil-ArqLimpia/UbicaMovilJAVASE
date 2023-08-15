@@ -9,7 +9,10 @@
     <body onload="initialize()">
         <jsp:include page="/Views/Shared/headerBody.jsp" />  
         <main class="container">   
-            <h5>Crear empresa</h5>
+            <br>
+            <br>
+            <br>
+            <h4><strong>Crear empresa</strong></h4>
             <form class="center-align" action="Empresa" method="post" onsubmit="return  validarFormulario()">
                 <input type="hidden" name="accion" value="<%=request.getAttribute("accion")%>">                
                 <div class="row">

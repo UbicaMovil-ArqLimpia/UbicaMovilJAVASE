@@ -10,7 +10,10 @@
     <body>
         <jsp:include page="/Views/Shared/headerBody.jsp" />  
         <main class="container">   
-            <h5>Detalle de categoria</h5>
+            <br>
+            <br>
+            <br>
+            <h2><strong>Detalles de categoria</strong></h2>
             <div class="row">
                 <div class="input-field col l4 s12">
                     <input disabled  id="txtNombre" type="text" value="<%=categoria.getNombre()%>" disabled="disabled">

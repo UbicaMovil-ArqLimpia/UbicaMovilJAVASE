@@ -6,7 +6,7 @@
         <jsp:include page="/Views/Shared/title.jsp" />
         <title>UbicaMovil</title>
     </head>
-    <body onload="initialize()">
+    <body>
         <jsp:include page="/Views/Shared/headerBody.jsp" />  
         <main class="container center-align"> 
             <br>
@@ -21,7 +21,5 @@
             </div>
            </main>
         <jsp:include page="/Views/Shared/footerBody.jsp" />
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCum27trvMaz6TpLQlZzF7521lkn-4EPt0&libraries=places&callback=inicializarMapa" async defer></script>
-        <script src="<%= request.getContextPath() %>/wwwroot/js/style.js"></script>
     </body>
 </html>

@@ -10,7 +10,10 @@
     <body onload="initialize()">
         <jsp:include page="/Views/Shared/headerBody.jsp" />  
         <main class="container">   
-            <h5>Eliminar empresa</h5>
+            <br>
+            <br>
+            <br>
+            <h4><strong>Eliminar empresa</strong></h4>
             <form action="Empresa" method="post">  
                 <input type="hidden" name="accion" value="<%=request.getAttribute("accion")%>"> 
                 <input type="hidden" name="id" value="<%=empresa.getId()%>">  

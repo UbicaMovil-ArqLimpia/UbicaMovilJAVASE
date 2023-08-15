@@ -1,5 +1,7 @@
 package ubicamovil.entidadesdenegocio;
 
+import java.util.ArrayList;
+
 public class Empresa {
     private int id;
     private String nombre;    
@@ -13,6 +15,7 @@ public class Empresa {
     private int top_aux;
     
     private Categoria categoria;
+    private ArrayList<Anuncio> anuncio;
 
     public Empresa() {
     }
@@ -115,5 +118,13 @@ public class Empresa {
 
     public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
+    }
+
+    public ArrayList<Anuncio> getAnuncio() {
+        return anuncio;
+    }
+
+    public void setAnuncio(ArrayList<Anuncio> anuncio) {
+        this.anuncio = anuncio;
     }
 }
