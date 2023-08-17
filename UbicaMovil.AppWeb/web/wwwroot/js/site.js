@@ -4,7 +4,7 @@
  */
 
 
-/* global google */
+/* global google, locations */
 
 var map;
 var myLocationMarker;
@@ -13,42 +13,13 @@ var searchBox;
 var directionsService;
 var directionsRenderer;
 var infoWindow;
-var locations = [
-    {
-        name: "Museo de la Palabra y la Imagen",
-        location: { lat: 13.674908, lng: -89.254547 },
-        hours: "Lunes a viernes: 9:00 AM - 5:00 PM"
-    },
-    {
-        name: "Parque Nacional El Boquerón",
-        location: { lat: 13.710703, lng: -89.235845 },
-        hours: "Todos los días: 8:00 AM - 4:00 PM"
-    },
-    {
-        name: "Catedral Metropolitana de San Salvador",
-        location: { lat: 13.706708, lng: -89.208956 },
-        hours: "Lunes a domingo: 7:00 AM - 7:00 PM"
-    },
-    {
-        name: "Teatro Nacional de El Salvador",
-        location: { lat: 13.705573, lng: -89.204382 },
-        hours: "Varía según eventos"
-    },
-    {
-        name: "Lago de Coatepeque",
-        location: { lat: 13.870904, lng: -89.593923 },
-        hours: "Todos los días: 8:00 AM - 5:00 PM"
-    }
-];
 
-// Función que se ejecuta al cargar la página
+
 function initMap() {
-    // Crear un objeto mapa y especificar el elemento DOM en el que se mostrará.
     map = new google.maps.Map(document.getElementById('map'), {
-        center: { lat: 0, lng: 0 }, // Ubicación inicial (latitud y longitud)
-        zoom: 15 // Nivel de zoom inicial
+        center: { lat: 0, lng: 0 }, 
+        zoom: 15 
     });
-    // Agregar los marcadores al mapa y ventanas de información
     for (var i = 0; i < locations.length; i++) {
         var marker = new google.maps.Marker({
             position: locations[i].location,
@@ -243,7 +214,6 @@ function calculateRoute() {
     });
 }
 
-// Función para manejar errores de geolocalización
 function handleLocationError(browserHasGeolocation, pos) {
     var infoWindow = new google.maps.InfoWindow({
         content: browserHasGeolocation ?
@@ -251,7 +221,6 @@ function handleLocationError(browserHasGeolocation, pos) {
             'Error: Tu navegador no soporta la geolocalización.'
     });
 
-    // Mostrar el mensaje de error en el mapa
     infoWindow.setPosition(pos);
     infoWindow.open(map);
 }

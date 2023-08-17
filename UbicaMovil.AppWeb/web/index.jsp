@@ -7,7 +7,7 @@
           <link href="mapa.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
         <title>UbicaMovil</title>
-        <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/wwwroot/materialize/css/mapa.css">
+        <link rel="stylesheet"  href="${pageContext.request.contextPath}/wwwroot/lib/materialize/css/mapa.css">
     </head>
     <body>
         <jsp:include page="/Views/Shared/headerBody.jsp" />  
@@ -34,7 +34,6 @@
     </div>
 
     <div class="row g-2 py-2">
-        <!-- Combo box para seleccionar el modo de transporte -->
         <div class="col-md">
             <div class="form-floating">
                 <select class="form-select" id="mode-select">
@@ -45,7 +44,6 @@
             </div>
         </div>
 
-        <!-- Combo box para seleccionar el modo de transporte -->
         <div class="col-md">
             <div class="form-floating">
                 <select class="form-select" id="">
@@ -57,9 +55,8 @@
         </div>
     </div>
 
-    <!-- Elemento contenedor del mapa -->
     <div class="py-3">
-        <div id="map"></div>
+         <div id="map" style="width: 100%; height: 480px;"></div>
     </div>
 
     <div class="card text-bg-dark mb-3">
@@ -69,7 +66,6 @@
             </h5>
         </div>
         <div class="card-body" >
-            <!-- Elemento contenedor de las indiaciones -->
             <div id="directions-panel" class="hidden"></div>
         </div>
     </div>
