@@ -32,7 +32,7 @@ if (strTop_aux != null && strTop_aux.trim().length() > 0) {
         <br>
         <br>
         <h4 class="center-align deep-purple-text text-darken-4"><strong>ANUNCIOS</strong></h4>
-        <form action="Anuncio" method="post">
+        <form action="AnuncioServlet" method="post"> <%-- Asegúrate de que la acción y el método sean correctos --%>
             <input type="hidden" name="accion" value="<%=request.getAttribute("accion")%>"> 
             <div class="row">
                 <div class="input-field col l8 s12">
@@ -48,7 +48,7 @@ if (strTop_aux != null && strTop_aux.trim().length() > 0) {
             <div class="row">
                 <div class="col l12 s12">
                     <button type="submit" class="waves-effect waves-light btn purple"><i class="material-icons right">search</i>Buscar</button>
-                    <a href="Anuncio?accion=create" class="waves-effect waves-light btn green"><i class="material-icons right">add</i>Crear</a>                          
+                    <a href="AnuncioServlet?accion=create" class="waves-effect waves-light btn green"><i class="material-icons right">add</i>Crear</a>                          
                 </div>
             </div>
         </form>
@@ -76,13 +76,13 @@ if (strTop_aux != null && strTop_aux.trim().length() > 0) {
                                 <td><%=anuncio.getTitulo()%></td>                                       
                                 <td>
                                     <div style="display:flex">
-                                        <a href="Anuncio?accion=edit&id=<%=anuncio.getId()%>" title="Modificar" class="waves-effect waves-light btn green">
+                                        <a href="AnuncioServlet?accion=edit&id=<%=anuncio.getId()%>" title="Modificar" class="waves-effect waves-light btn green">
                                             <i class="material-icons">edit</i>
                                         </a>
-                                        <a href="Anuncio?accion=details&id=<%=anuncio.getId()%>" title="Ver" class="waves-effect waves-light btn blue">
+                                        <a href="AnuncioServlet?accion=details&id=<%=anuncio.getId()%>" title="Ver" class="waves-effect waves-light btn blue">
                                             <i class="material-icons">description</i>
                                         </a>
-                                        <a href="Anuncio?accion=delete&id=<%=anuncio.getId()%>" title="Eliminar" class="waves-effect waves-light btn red">
+                                        <a href="AnuncioServlet?accion=delete&id=<%=anuncio.getId()%>" title="Eliminar" class="waves-effect waves-light btn red">
                                             <i class="material-icons">delete</i>
                                         </a>     
                                     </div>

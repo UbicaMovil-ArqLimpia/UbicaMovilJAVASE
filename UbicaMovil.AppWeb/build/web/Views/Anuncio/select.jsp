@@ -9,7 +9,7 @@ int id = (request.getParameter("id") != null) ? Integer.parseInt(request.getPara
 <select id="slAnuncio" name="idAnuncio">
     <option <%=(id == 0) ? "selected" : ""%>  value="0">SELECCIONAR</option>
     <% for (Anuncio anuncio : anuncios) {%>
-    <option <%=(id == anuncio.getId()) ? "selected" : ""%>  value="<%=anuncio.getId()%>"><%= anuncio.getTitulo()%></option>
+    <option <%=(id == anuncio.getId()) ? "selected" : ""%>  value="<%=anuncio.getId()%>"><%= anuncio.getNombre()%></option>
     <%}%>
 </select>
 <label for="idAnuncio">Anuncio</label>

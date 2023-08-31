@@ -1,48 +1,52 @@
-var geocoder;
-var map;
-var markers = []; // Array para almacenar los marcadores
+// JavaScript para manejar el mapa y la ubicación
+let mapa;
+let marcador;
 
-function initialize() {
-    var latitud = parseFloat(document.getElementById('latitud').value);
-    var longitud = parseFloat(document.getElementById('longitud').value);
-    
-    geocoder = new google.maps.Geocoder();
-    var latlng = new google.maps.LatLng(latitud, longitud);
-    
-    var mapOptions = {
-        zoom: 15,
-        center: latlng
-    };
-    
-    map = new google.maps.Map(document.getElementById('map'), mapOptions);
-    
-    var marker = new google.maps.Marker({
-        position: latlng,
-        map: map,
-        title: 'Ubicación'
+function inicializarMapa() {
+    mapa = new google.maps.Map(document.getElementById("mapa"), {
+        center: { lat: 0, lng: 0 },
+        zoom: 8,
     });
-    markers.push(marker); // Agregar el marcador al array
-}
 
-function codeAddresses() {
-    var addresses = ['Dirección 1', 'Dirección 2', 'Dirección 3']; // Array de direcciones
+    // Obtener la ubicación del usuario
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+            (posicion) => {
+                const ubicacionUsuario = {
+                    lat: posicion.coords.latitude,
+                    lng: posicion.coords.longitude,
+                };
+                mapa.setCenter(ubicacionUsuario);
+                mapa.setZoom(14);
 
-    for (var i = 0; i < addresses.length; i++) {
-        geocodeAddress(addresses[i]);
+                // Colocar un marcador verde en la ubicación del usuario
+                marcador = new google.maps.Marker({
+                    position: ubicacionUsuario,
+                    map: mapa,
+                    title: "Tu ubicación",
+                    draggable: true, // Permite arrastrar el marcador
+                    icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png', // Icono verde
+                });
+
+                // Escuchar el evento de arrastrar el marcador
+                marcador.addListener("dragend", () => {
+                    actualizarCoordenadas(marcador.getPosition());
+                });
+
+                // Inicializar los campos de entrada con las coordenadas actuales del marcador
+                actualizarCoordenadas(ubicacionUsuario);
+            },
+            () => {
+                alert("No se pudo obtener la ubicación del usuario.");
+            }
+        );
+    } else {
+        alert("Tu navegador no soporta geolocalización.");
     }
 }
 
-function geocodeAddress(address) {
-    geocoder.geocode({ 'address': address }, function(results, status) {
-        if (status === 'OK') {
-            var marker = new google.maps.Marker({
-                position: results[0].geometry.location,
-                map: map,
-                title: address
-            });
-            markers.push(marker); // Agregar el marcador al array
-        } else {
-            console.log('La geocodificación no tuvo éxito para ' + address + ' por la siguiente razón: ' + status);
-        }
-    });
+// Actualiza los campos de entrada con las coordenadas dadas
+function actualizarCoordenadas(posicion) {
+    document.getElementById("latitud").value = posicion.lat();
+    document.getElementById("longitud").value = posicion.lng();
 }

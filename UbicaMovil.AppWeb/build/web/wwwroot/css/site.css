@@ -1,0 +1,18 @@
+/* Estilo para el contenedor del mapa */
+#map {
+    height: 400px;
+    width: 100%;
+}
+
+/* Estilo para el contenedor de las indicaciones */
+#directions-panel {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+}
+
+/* Estilo para ocultar las indicaciones y la ruta */
+.hidden {
+    display: none;
+}

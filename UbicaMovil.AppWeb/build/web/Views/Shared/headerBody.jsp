@@ -1,7 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="ubicamovil.appweb.utils.*"%>
 <!--Texto en nav en pantalla de escritorio-->
-<nav class="red">
+<nav class="red darken-2">
     <div class="nav-wrapper container">
         <a href="Home" class="brand-logo">UbicaMovil</a>
         <a href="Anuncio" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>       

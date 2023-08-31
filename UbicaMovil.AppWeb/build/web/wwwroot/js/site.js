@@ -1,5 +1,3 @@
-/* global google, locations */
-
 var map;
 var myLocationMarker;
 var searchMarker;
@@ -8,26 +6,13 @@ var directionsService;
 var directionsRenderer;
 var infoWindow;
 
-
+// Función que se ejecuta al cargar la página
 function initMap() {
+    // Crear un objeto mapa y especificar el elemento DOM en el que se mostrará.
     map = new google.maps.Map(document.getElementById('map'), {
-        center: { lat: 0, lng: 0 }, 
-        zoom: 15 
+        center: { lat: 0, lng: 0 }, // Ubicación inicial (latitud y longitud)
+        zoom: 15 // Nivel de zoom inicial
     });
-    for (var i = 0; i < locations.length; i++) {
-        var marker = new google.maps.Marker({
-            position: locations[i].location,
-            map: map
-        });
-
-        var infoWindow = new google.maps.InfoWindow({
-            content: "<h3>" + locations[i].name + "</h3><p>" + locations[i].hours + "</p>"
-        });
-
-        marker.addListener('click', function () {
-            infoWindow.open(map, this);
-        });
-    }
     // Inicializar el marcador para la ubicación actual
     myLocationMarker = new google.maps.Marker({
         map: map,
@@ -208,6 +193,7 @@ function calculateRoute() {
     });
 }
 
+// Función para manejar errores de geolocalización
 function handleLocationError(browserHasGeolocation, pos) {
     var infoWindow = new google.maps.InfoWindow({
         content: browserHasGeolocation ?
@@ -215,6 +201,7 @@ function handleLocationError(browserHasGeolocation, pos) {
             'Error: Tu navegador no soporta la geolocalización.'
     });
 
+    // Mostrar el mensaje de error en el mapa
     infoWindow.setPosition(pos);
     infoWindow.open(map);
 }
